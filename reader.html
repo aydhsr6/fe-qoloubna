@@ -62,17 +62,15 @@
         const bookTitle = document.getElementById('book-title');
         const downloadBtn = document.getElementById('download-btn');
 
-        // قاعدة بيانات الكتب تربط كل كتاب بمعرف Google Drive الخاص به (Drive File ID)
+                // قاعدة بيانات الكتب تربط كل كتاب بمعرف Google Drive الخاص به (Drive File ID)
         const booksData = {
             'book1': { 
                 title: 'التفسير الميسر', 
                 driveId: 'ضع_معرف_جوجل_درايف_للكتاب_الأول_هنا' 
             },
             'book2': { 
-    title: 'الدليل في تلاوة آيات التنزيل', 
-    driveId: '1vsN0LoBsO6hr7o-0V1SnGJjM8elJnPI2' 
-},
- 
+                title: 'الدليل في تلاوة آيات التنزيل', 
+                driveId: '1vsN0LoBsO6hr7o-0V1SnGJjM8elJnPI2' 
             },
             'book3': { 
                 title: 'العقيدة الإسلامية', 
@@ -83,6 +81,7 @@
                 driveId: 'ضع_معرف_جوجل_درايف_للكتاب_الرابع_هنا' 
             }
         };
+
 
         if (bookId && booksData[bookId]) {
             const book = booksData[bookId];
