@@ -31,7 +31,7 @@
             </div>
 
             <div class="w-full md:w-96 relative">
-                <input type="text" id="search-input" placeholder="ابحث عن كتاب، أو موضوع..." class="w-full bg-emerald-800/80 text-white placeholder-emerald-300 text-sm rounded-lg px-4 py-2.5 pr-10 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition">
+                <input type="text" id="search-input" placeholder="ابحث عن كتاب، أو متن علمي..." class="w-full bg-emerald-800/80 text-white placeholder-emerald-300 text-sm rounded-lg px-4 py-2.5 pr-10 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition">
                 <span class="absolute right-3 top-2.5 text-emerald-300 text-lg">🔍</span>
             </div>
 
@@ -39,7 +39,7 @@
                 <a href="#" class="hover:text-emerald-200 transition">الرئيسية</a>
                 <a href="#quran-section" class="hover:text-emerald-200 transition">القرآن الكريم</a>
                 <a href="#tajweed-section" class="hover:text-emerald-200 transition">أحكام التجويد</a>
-                <a href="#mutun-section" class="hover:text-emerald-200 transition">المتون</a>
+                <a href="#mutun-section" class="hover:text-emerald-200 transition">المتون العلمية</a>
             </nav>
         </div>
     </header>
@@ -49,21 +49,20 @@
         <div class="container mx-auto max-w-2xl">
             <h2 class="text-3xl md:text-4xl font-bold mb-3 amiri-font">مرحباً بك في مكتبة "في قلوبنا"</h2>
             <p class="text-emerald-100 text-sm md:text-base leading-relaxed mb-6">
-                آلاف الكتب والموسوعات الدينية والتفاسير جاهزة بين يديك للتصفح المباشر أو التحميل المجاني بصيغة PDF.
+                موسوعة متكاملة تضم القرآن الكريم، أحكام التجويد، وأمهات المتون العلمية للتصفح والقراءة أو التحميل المجاني بصيغة PDF.
             </p>
         </div>
     </section>
 
-    <!-- محتوى الأقسام الرئيسية -->
+    <!-- محتوى الأقسام الثلاثة الرئيسية -->
     <main class="flex-grow container mx-auto px-4 py-8 space-y-12">
         
         <!-- القسم الأول: القرآن الكريم -->
         <section id="quran-section">
             <div class="border-b-2 border-emerald-600 pb-2 mb-6">
-                <h3 class="text-2xl font-bold text-emerald-800 amiri-font">📖 القرآن الكريم وعلومه</h3>
+                <h3 class="text-2xl font-bold text-emerald-800 amiri-font">📖 القرآن الكريم</h3>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- كتاب التفسير -->
                 <div class="bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
                     <div>
                         <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">📖</div>
@@ -81,17 +80,14 @@
             </div>
         </section>
 
-        <!-- القسم الثاني: أحكام التجويد (يدعم إضافة عشرات الكتب بكل سهولة) -->
+        <!-- القسم الثاني: أحكام التجويد -->
         <section id="tajweed-section">
             <div class="border-b-2 border-emerald-600 pb-2 mb-6">
                 <h3 class="text-2xl font-bold text-emerald-800 amiri-font">🎧 أحكام التجويد</h3>
                 <p class="text-xs text-slate-500 mt-1">مكتبة متكاملة تضم مراجع وعشرات الكتب الخاصة بعلوم التجويد والتلاوة.</p>
             </div>
-            
-            <!-- شبكة كتب التجويد -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                
-                <!-- الكتاب الأول: الدليل في تلاوة آيات التنزيل -->
+                <!-- الكتاب الأول -->
                 <div class="bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
                     <div>
                         <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">🎵</div>
@@ -107,7 +103,7 @@
                     </div>
                 </div>
 
-                <!-- الكتاب الثاني (يمكنك تكرار هذه البطاقة لإضافة الكتب القادمة تباعاً) -->
+                <!-- الكتاب الثاني -->
                 <div class="bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
                     <div>
                         <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">📖</div>
@@ -122,47 +118,99 @@
                         <a href="#" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- القسم الثالث: المتون -->
+        <!-- القسم الثالث: المتون العلمية (مقسمة إلى عدة متون بأسماء مباشرة) -->
         <section id="mutun-section">
             <div class="border-b-2 border-emerald-600 pb-2 mb-6">
                 <h3 class="text-2xl font-bold text-emerald-800 amiri-font">📜 المتون العلمية</h3>
+                <p class="text-xs text-slate-500 mt-1">اختر المتن العلمي المطلوب لتصفحه مباشرة أو تحميله بصيغة PDF.</p>
             </div>
+            
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- كتاب المتون -->
+                
+                <!-- متن 1: الأربعين النووية -->
                 <div class="bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
                     <div>
                         <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">📜</div>
                         <div class="p-4">
-                            <span class="text-[10px] bg-indigo-50 text-indigo-700 px-2.5 py-0.5 rounded-full font-bold">المتون</span>
-                            <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">متون العقيدة والفقه</h4>
-                            <p class="text-gray-600 text-xs mt-3 line-clamp-2">مجموعة المتون العلمية الأساسية لطلبة العلم.</p>
+                            <span class="text-[10px] bg-indigo-50 text-indigo-700 px-2.5 py-0.5 rounded-full font-bold">الحديث الشريف</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">متن الأربعين النووية</h4>
+                            <p class="text-gray-600 text-xs mt-3 line-clamp-2">الأربعون حديثاً في الأحاديث الصحيحة الجامعة لعلوم الدين.</p>
                         </div>
                     </div>
                     <div class="p-4 pt-0 flex gap-2">
-                        <a href="reader.html?book=book3" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
+                        <a href="reader.html?book=mutun_nawawi" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
                         <a href="#" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
                     </div>
                 </div>
+
+                <!-- متن 2: ثلاثة الأصول -->
+                <div class="bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">📜</div>
+                        <div class="p-4">
+                            <span class="text-[10px] bg-indigo-50 text-indigo-700 px-2.5 py-0.5 rounded-full font-bold">العقيدة</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">متن ثلاثة الأصول</h4>
+                            <p class="text-gray-600 text-xs mt-3 line-clamp-2">ثلاثة الأصول الأدلة التي يجب على الإنسان معرفتها.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 flex gap-2">
+                        <a href="reader.html?book=mutun_usul" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
+                        <a href="#" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
+                    </div>
+                </div>
+
+                <!-- متن 3: متن الآجرومية -->
+                <div class="bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">📜</div>
+                        <div class="p-4">
+                            <span class="text-[10px] bg-indigo-50 text-indigo-700 px-2.5 py-0.5 rounded-full font-bold">النحو العربي</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">متن الآجرومية</h4>
+                            <p class="text-gray-600 text-xs mt-3 line-clamp-2">المقدمة الآجرومية في مبادئ علم العربية والنحو.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 flex gap-2">
+                        <a href="reader.html?book=mutun_ajrumiyyah" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
+                        <a href="#" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
+                    </div>
+                </div>
+
+                <!-- متن 4: متن الورقات -->
+                <div class="bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">📜</div>
+                        <div class="p-4">
+                            <span class="text-[10px] bg-indigo-50 text-indigo-700 px-2.5 py-0.5 rounded-full font-bold">أصول الفقه</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">متن الورقات</h4>
+                            <p class="text-gray-600 text-xs mt-3 line-clamp-2">متن الورقات للإمام الجويني في أصول الفقه.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 flex gap-2">
+                        <a href="reader.html?book=mutun_waraqat" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
+                        <a href="#" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
     </main>
 
-    <!-- تذييل الصفحة (الحقوق، التواصل، ورابط الفيسبوك) -->
+    <!-- تذييل الصفحة -->
     <footer class="bg-slate-900 text-slate-300 py-8 mt-12 border-t border-slate-800">
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-right">
             <div>
-                <p class="text-sm">جميع الحقوق محفوظة منصة <span class="text-emerald-400 font-bold amiri-font">في قلوبنا</span> الرقمية &copy; 2026</p>
+                <p class="text-sm">
+                    جميع الحقوق محفوظة منصة 
+                    <a href="https://www.facebook.com/share/14myFs8nBdZ/" target="_blank" class="text-emerald-400 font-bold amiri-font hover:underline">في قلوبنا</a> 
+                    الرقمية &copy; 2026
+                </p>
                 <p class="text-xs text-slate-400 mt-1">كلّ ما يُستعان به على الطَّاعة فهو طاعة</p>
             </div>
             <div class="flex items-center gap-4 text-sm">
-                <a href="https://facebook.com" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition flex items-center gap-2">
-                    <span>📘</span> فيسبوك
-                </a>
                 <a href="mailto:contact@fiqulobina.com" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg transition flex items-center gap-2">
                     <span>✉️</span> تواصل معنا
                 </a>
