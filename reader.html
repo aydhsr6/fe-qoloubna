@@ -36,14 +36,14 @@
             <!-- شريط معلومات الكتاب داخل العارض -->
             <div class="bg-slate-50 px-4 py-3 border-b border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-2">
                 <span id="book-title" class="font-bold text-slate-800 text-base amiri-font">جاري تجهيز الكتاب...</span>
-                <a id="download-btn" href="#" download class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-lg text-xs font-medium transition flex items-center gap-1">
+                <a id="download-btn" href="#" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-lg text-xs font-medium transition flex items-center gap-1">
                     <span>📥</span> تحميل النسخة PDF
                 </a>
             </div>
 
-            <!-- إطار عرض الـ PDF -->
+            <!-- إطار عرض الـ PDF (القراءة المباشرة داخل الموقع) -->
             <div class="flex-grow w-full bg-slate-200 flex items-center justify-center relative">
-                <iframe id="pdf-viewer" src="" class="w-full h-full border-0"></iframe>
+                <iframe id="pdf-viewer" src="" class="w-full h-full border-0" allowfullscreen></iframe>
             </div>
         </div>
     </main>
@@ -62,21 +62,39 @@
         const bookTitle = document.getElementById('book-title');
         const downloadBtn = document.getElementById('download-btn');
 
-        // قاعدة بيانات مصغرة للكتب لربطها بملفات الـ PDF
+        // قاعدة بيانات الكتب تربط كل كتاب بمعرف Google Drive الخاص به (Drive File ID)
         const booksData = {
-            'book1': { title: 'موسوعة التفسير الميسر', file: 'books/tafseer_vol1.pdf' },
-            'book2': { title: 'العميد في أحكام التجويد', file: 'books/tajweed_book.pdf' },
-            'book3': { title: 'شرح العقيدة الإسلامية', file: 'books/aqeedah_book.pdf' },
-            'book4': { title: 'جامع أحاديث الأحكام', file: 'books/hadith_book.pdf' }
+            'book1': { 
+                title: 'موسوعة التفسير الميسر', 
+                driveId: 'ضع_معرف_جوجل_درايف_للكتاب_الأول_هنا' 
+            },
+            'book2': { 
+                title: 'العميد في أحكام التجويد', 
+                driveId: 'ضع_معرف_جوجل_درايف_للكتاب_الثاني_هنا' 
+            },
+            'book3': { 
+                title: 'شرح العقيدة الإسلامية', 
+                driveId: 'ضع_معرف_جوجل_درايف_للكتاب_الثالث_هنا' 
+            },
+            'book4': { 
+                title: 'جامع أحاديث الأحكام', 
+                driveId: 'ضع_معرف_جوجل_درايف_للكتاب_الرابع_هنا' 
+            }
         };
 
         if (bookId && booksData[bookId]) {
-            bookTitle.textContent = booksData[bookId].title;
-            pdfViewer.src = booksData[bookId].file;
-            downloadBtn.href = booksData[bookId].file;
+            const book = booksData[bookId];
+            bookTitle.textContent = book.title;
+            
+            // رابط المعاينة المباشرة للقراءة داخل الموقع
+            pdfViewer.src = `https://drive.google.com/file/d/${book.driveId}/preview`;
+            
+            // رابط التحميل المباشر للزر
+            downloadBtn.href = `https://drive.google.com/uc?export=download&id=${book.driveId}`;
         } else {
             bookTitle.textContent = 'عذراً، الكتاب المطلوب غير متوفر حالياً أو حدث خطأ في الرابط.';
             pdfViewer.style.display = 'none';
+            downloadBtn.style.display = 'none';
         }
     </script>
 </body>
