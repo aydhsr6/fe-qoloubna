@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عارض الكتب - في قلوبنا</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+        }
+        .amiri-font {
+            font-family: 'Amiri', serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-100">
+
+    <!-- شريط التنقل العلوي -->
+    <header class="bg-emerald-700 text-white shadow-md px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <span class="text-2xl">📖</span>
+            <h1 class="font-bold text-lg amiri-font">عَارض الكتب - في قلوبنا</h1>
+        </div>
+        <a href="index.html" class="bg-emerald-800 hover:bg-emerald-900 text-emerald-100 px-4 py-1.5 rounded-lg text-xs font-semibold transition">
+            العودة للرئيسية 🔙
+        </a>
+    </header>
+
+    <!-- منطقة عرض الكتاب -->
+    <main class="flex-grow flex flex-col items-center justify-center p-4 md:p-6">
+        <div class="w-full max-w-5xl bg-white rounded-xl shadow-md overflow-hidden border border-slate-200 flex flex-col h-[82vh]">
+            
+            <!-- شريط معلومات الكتاب داخل العارض -->
+            <div class="bg-slate-50 px-4 py-3 border-b border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-2">
+                <span id="book-title" class="font-bold text-slate-800 text-base amiri-font">جاري تجهيز الكتاب...</span>
+                <a id="download-btn" href="#" download class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded-lg text-xs font-medium transition flex items-center gap-1">
+                    <span>📥</span> تحميل النسخة PDF
+                </a>
+            </div>
+
+            <!-- إطار عرض الـ PDF -->
+            <div class="flex-grow w-full bg-slate-200 flex items-center justify-center relative">
+                <iframe id="pdf-viewer" src="" class="w-full h-full border-0"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="bg-slate-900 text-white text-center py-4 text-xs">
+        <p>منصة <span class="text-emerald-400 font-bold amiri-font">في قلوبنا</span> الرقمية &copy; 2026</p>
+    </footer>
+
+    <script>
+        // قراءة معرف الكتاب من رابط الصفحة (Query Parameters)
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookId = urlParams.get('book');
+
+        const pdfViewer = document.getElementById('pdf-viewer');
+        const bookTitle = document.getElementById('book-title');
+        const downloadBtn = document.getElementById('download-btn');
+
+        // قاعدة بيانات مصغرة للكتب لربطها بملفات الـ PDF
+        const booksData = {
+            'book1': { title: 'موسوعة التفسير الميسر', file: 'books/tafseer_vol1.pdf' },
+            'book2': { title: 'العميد في أحكام التجويد', file: 'books/tajweed_book.pdf' },
+            'book3': { title: 'شرح العقيدة الإسلامية', file: 'books/aqeedah_book.pdf' },
+            'book4': { title: 'جامع أحاديث الأحكام', file: 'books/hadith_book.pdf' }
+        };
+
+        if (bookId && booksData[bookId]) {
+            bookTitle.textContent = booksData[bookId].title;
+            pdfViewer.src = booksData[bookId].file;
+            downloadBtn.href = booksData[bookId].file;
+        } else {
+            bookTitle.textContent = 'عذراً، الكتاب المطلوب غير متوفر حالياً أو حدث خطأ في الرابط.';
+            pdfViewer.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
