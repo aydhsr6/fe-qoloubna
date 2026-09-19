@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>في قلوبنا - كلّ ما يُستعان به على الطَّاعة فهو طاعة </title>
+    <title>في قلوبنا - كلّ ما يُستعان به على الطَّاعة فهو طاعة</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -31,13 +31,15 @@
             </div>
 
             <div class="w-full md:w-96 relative">
-                <input type="text" id="search-input" placeholder="ابحث عن كتاب، مؤلف، أو موضوع..." class="w-full bg-emerald-800/80 text-white placeholder-emerald-300 text-sm rounded-lg px-4 py-2.5 pr-10 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition">
+                <input type="text" id="search-input" placeholder="ابحث عن كتاب، أو موضوع..." class="w-full bg-emerald-800/80 text-white placeholder-emerald-300 text-sm rounded-lg px-4 py-2.5 pr-10 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition">
                 <span class="absolute right-3 top-2.5 text-emerald-300 text-lg">🔍</span>
             </div>
 
             <nav class="hidden lg:flex items-center space-x-6 space-x-reverse text-sm font-medium">
                 <a href="#" class="hover:text-emerald-200 transition">الرئيسية</a>
-                <a href="#books-section" class="hover:text-emerald-200 transition">الأقسام</a>
+                <a href="#quran-section" class="hover:text-emerald-200 transition">القرآن الكريم</a>
+                <a href="#tajweed-section" class="hover:text-emerald-200 transition">أحكام التجويد</a>
+                <a href="#mutun-section" class="hover:text-emerald-200 transition">المتون</a>
             </nav>
         </div>
     </header>
@@ -52,150 +54,121 @@
         </div>
     </section>
 
-    <!-- قسم عرض الكتب -->
-    <main id="books-section" class="flex-grow container mx-auto px-4 py-8">
+    <!-- محتوى الأقسام الرئيسية -->
+    <main class="flex-grow container mx-auto px-4 py-8 space-y-12">
         
-        <!-- أزرار التصنيف والأقسام -->
-        <div class="mb-8">
-            <h3 class="text-lg font-bold text-slate-700 mb-3 amiri-font">اختر القسم:</h3>
-            <div class="flex flex-wrap gap-2" id="filter-buttons">
-                <button data-filter="all" class="filter-btn active bg-emerald-700 text-white px-4 py-2 rounded-lg text-xs font-semibold shadow-sm transition">الكل</button>
-                <button data-filter="quran" class="filter-btn bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-xs font-semibold shadow-sm hover:bg-emerald-50 transition">القرآن وعلومه</button>
-                <button data-filter="tajweed" class="filter-btn bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-xs font-semibold shadow-sm hover:bg-emerald-50 transition">أحكام التجويد</button>
-                <button data-filter="aqeedah" class="filter-btn bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-xs font-semibold shadow-sm hover:bg-emerald-50 transition">العقيدة</button>
-                <button data-filter="fiqh" class="filter-btn bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-xs font-semibold shadow-sm hover:bg-emerald-50 transition">الفقه والحديث</button>
+        <!-- القسم الأول: القرآن الكريم -->
+        <section id="quran-section">
+            <div class="border-b-2 border-emerald-600 pb-2 mb-6">
+                <h3 class="text-2xl font-bold text-emerald-800 amiri-font">📖 القرآن الكريم وعلومه</h3>
             </div>
-        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- كتاب التفسير -->
+                <div class="bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">📖</div>
+                        <div class="p-4">
+                            <span class="text-[10px] bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full font-bold">القرآن الكريم</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">موسوعة التفسير الميسر</h4>
+                            <p class="text-gray-600 text-xs mt-3 line-clamp-2">شرح وتدبر لآيات الذكر الحكيم مع بيان المعاني والأحكام.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 flex gap-2">
+                        <a href="reader.html?book=book1" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
+                        <a href="#" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- شبكة الكتب -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="books-grid">
+        <!-- القسم الثاني: أحكام التجويد (يدعم إضافة عشرات الكتب بكل سهولة) -->
+        <section id="tajweed-section">
+            <div class="border-b-2 border-emerald-600 pb-2 mb-6">
+                <h3 class="text-2xl font-bold text-emerald-800 amiri-font">🎧 أحكام التجويد</h3>
+                <p class="text-xs text-slate-500 mt-1">مكتبة متكاملة تضم مراجع وعشرات الكتب الخاصة بعلوم التجويد والتلاوة.</p>
+            </div>
             
-            <!-- كتاب 1 -->
-            <div class="book-card bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition" data-category="quran" data-title="موسوعة التفسير الميسر">
-                <div>
-                    <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">📖</div>
-                    <div class="p-4">
-                        <span class="text-[10px] bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full font-bold">القرآن وعلومه</span>
-                        <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">موسوعة التفسير الميسر</h4>
-                        <p class="text-xs text-gray-500 mt-1">الشيخ محمد الطبري</p>
-                        <p class="text-gray-600 text-xs mt-2 line-clamp-2">شرح وتدبر لآيات الذكر الحكيم مع بيان المعاني والأحكام.</p>
+            <!-- شبكة كتب التجويد -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                
+                <!-- الكتاب الأول: الدليل في تلاوة آيات التنزيل -->
+                <div class="bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">🎵</div>
+                        <div class="p-4">
+                            <span class="text-[10px] bg-teal-50 text-teal-700 px-2.5 py-0.5 rounded-full font-bold">أحكام التجويد</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">الدليل في تلاوة آيات التنزيل</h4>
+                            <p class="text-gray-600 text-xs mt-3 line-clamp-2">دليل عملي لإتقان التلاوة وأحكام التجويد الصحيحة.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 flex gap-2">
+                        <a href="reader.html?book=book2" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
+                        <a href="https://drive.google.com/uc?export=download&id=1vsN0LoBsO6hr7o-0V1SnGJjM8elJnPI2" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
                     </div>
                 </div>
-                <div class="p-4 pt-0 flex gap-2">
-                    <a href="reader.html?book=book1" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
-                    <a href="books/tafseer_vol1.pdf" download class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
-                </div>
-            </div>
 
-            <!-- كتاب 2 -->
-            <div class="book-card bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition" data-category="tajweed" data-title="العميد في أحكام التجويد">
-                <div>
-                    <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">🎵</div>
-                    <div class="p-4">
-                        <span class="text-[10px] bg-teal-50 text-teal-700 px-2.5 py-0.5 rounded-full font-bold">أحكام التجويد</span>
-                        <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">العميد في أحكام التجويد</h4>
-                        <p class="text-xs text-gray-500 mt-1">د. أيمن سويد</p>
-                        <p class="text-gray-600 text-xs mt-2 line-clamp-2">دليل مبسط ومفصل لقواعد تجويد القرآن الكريم وتلاوته.</p>
+                <!-- الكتاب الثاني (يمكنك تكرار هذه البطاقة لإضافة الكتب القادمة تباعاً) -->
+                <div class="bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">📖</div>
+                        <div class="p-4">
+                            <span class="text-[10px] bg-teal-50 text-teal-700 px-2.5 py-0.5 rounded-full font-bold">أحكام التجويد</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">العميد في أحكام التجويد</h4>
+                            <p class="text-gray-600 text-xs mt-3 line-clamp-2">دليل مبسط ومفصل لقواعد تجويد القرآن الكريم.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 flex gap-2">
+                        <a href="reader.html?book=book5" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
+                        <a href="#" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
                     </div>
                 </div>
-                <div class="p-4 pt-0 flex gap-2">
-                    <a href="reader.html?book=book2" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
-                    <a href="books/tajweed_book.pdf" download class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
-                </div>
-            </div>
 
-            <!-- كتاب 3 -->
-            <div class="book-card bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition" data-category="aqeedah" data-title="شرح العقيدة الإسلامية">
-                <div>
-                    <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">💎</div>
-                    <div class="p-4">
-                        <span class="text-[10px] bg-amber-50 text-amber-700 px-2.5 py-0.5 rounded-full font-bold">العقيدة</span>
-                        <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">شرح العقيدة الإسلامية</h4>
-                        <p class="text-xs text-gray-500 mt-1">ابن عثيمين</p>
-                        <p class="text-gray-600 text-xs mt-2 line-clamp-2">رسالة واضحة في أصول الإيمان وبيان العقيدة الصحيحة.</p>
+            </div>
+        </section>
+
+        <!-- القسم الثالث: المتون -->
+        <section id="mutun-section">
+            <div class="border-b-2 border-emerald-600 pb-2 mb-6">
+                <h3 class="text-2xl font-bold text-emerald-800 amiri-font">📜 المتون العلمية</h3>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- كتاب المتون -->
+                <div class="bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">📜</div>
+                        <div class="p-4">
+                            <span class="text-[10px] bg-indigo-50 text-indigo-700 px-2.5 py-0.5 rounded-full font-bold">المتون</span>
+                            <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">متون العقيدة والفقه</h4>
+                            <p class="text-gray-600 text-xs mt-3 line-clamp-2">مجموعة المتون العلمية الأساسية لطلبة العلم.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 flex gap-2">
+                        <a href="reader.html?book=book3" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
+                        <a href="#" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
                     </div>
                 </div>
-                <div class="p-4 pt-0 flex gap-2">
-                    <a href="reader.html?book=book3" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
-                    <a href="books/aqeedah_book.pdf" download class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
-                </div>
             </div>
+        </section>
 
-            <!-- كتاب 4 -->
-            <div class="book-card bg-white rounded-xl shadow border border-slate-100 overflow-hidden flex flex-col justify-between hover:shadow-md transition" data-category="fiqh" data-title="جامع أحاديث الأحكام">
-                <div>
-                    <div class="h-44 bg-slate-100 flex items-center justify-center text-4xl border-b border-slate-100">📜</div>
-                    <div class="p-4">
-                        <span class="text-[10px] bg-blue-50 text-blue-700 px-2.5 py-0.5 rounded-full font-bold">الفقه والحديث</span>
-                        <h4 class="font-bold text-base text-slate-800 mt-2 line-clamp-1 amiri-font">جامع أحاديث الأحكام</h4>
-                        <p class="text-xs text-gray-500 mt-1">الحافظ ابن حجر</p>
-                        <p class="text-gray-600 text-xs mt-2 line-clamp-2">مجموعة منتقاة من الأحاديث النبوية الشريفة المتعلقة بالأحكام.</p>
-                    </div>
-                </div>
-                <div class="p-4 pt-0 flex gap-2">
-                    <a href="reader.html?book=book4" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2 rounded-lg text-xs font-medium transition">تصفح</a>
-                    <a href="books/hadith_book.pdf" download class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded-lg text-xs font-medium transition">تحميل PDF</a>
-                </div>
-            </div>
-
-        </div>
     </main>
 
-    <!-- تذييل الصفحة وقسم التواصل -->
-    <footer class="bg-slate-900 text-slate-300 py-8 px-4 border-t border-slate-800 mt-auto">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-right">
+    <!-- تذييل الصفحة (الحقوق، التواصل، ورابط الفيسبوك) -->
+    <footer class="bg-slate-900 text-slate-300 py-8 mt-12 border-t border-slate-800">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-right">
             <div>
-                <h3 class="text-white font-bold mb-1 amiri-font text-lg">تواصل معنا</h3>
-                <p class="text-xs text-slate-400 mb-1">يسعدنا تواصلكم واستفساراتكم عبر البريد الإلكتروني:</p>
-                <a href="mailto:aydhsr6@gmail.com" class="text-emerald-400 hover:underline font-medium text-sm">aydhsr6@gmail.com</a>
+                <p class="text-sm">جميع الحقوق محفوظة منصة <span class="text-emerald-400 font-bold amiri-font">في قلوبنا</span> الرقمية &copy; 2026</p>
+                <p class="text-xs text-slate-400 mt-1">كلّ ما يُستعان به على الطَّاعة فهو طاعة</p>
             </div>
-            <div>
-                <p class="text-sm text-slate-400">
-                    <a href="https://www.facebook.com/share/14myFs8nBdZ/" target="_blank" class="text-emerald-400 hover:underline font-medium">
-                        جميع الحقوق محفوظة في قلوبنا
-                    </a> © 2026
-                </p>
+            <div class="flex items-center gap-4 text-sm">
+                <a href="https://facebook.com" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition flex items-center gap-2">
+                    <span>📘</span> فيسبوك
+                </a>
+                <a href="mailto:contact@fiqulobina.com" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg transition flex items-center gap-2">
+                    <span>✉️</span> تواصل معنا
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- سكريبت الفلترة والبحث -->
-    <script>
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const bookCards = document.querySelectorAll('.book-card');
-
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => {
-                    b.classList.remove('bg-emerald-700', 'text-white');
-                    b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
-                });
-                btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
-                btn.classList.add('bg-emerald-700', 'text-white');
-
-                const filter = btn.getAttribute('data-filter');
-                bookCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        const searchInput = document.getElementById('search-input');
-        searchInput.addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
-            bookCards.forEach(card => {
-                const title = card.getAttribute('data-title').toLowerCase();
-                if (title.includes(term)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
